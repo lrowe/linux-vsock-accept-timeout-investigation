@@ -1,0 +1,216 @@
+cpus=16
+      httpclient-134737 [003] 64175.641969: funcgraph_entry:                   |  vsock_connect() {
+      httpclient-134737 [003] 64175.641969: funcgraph_entry:                   |    lock_sock_nested() {
+      httpclient-134737 [003] 64175.641969: funcgraph_entry:        0.161 us   |      __cond_resched();
+      httpclient-134737 [003] 64175.641970: funcgraph_entry:        0.060 us   |      _raw_spin_lock_bh();
+      httpclient-134737 [003] 64175.641970: funcgraph_entry:                   |      _raw_spin_unlock_bh() {
+      httpclient-134737 [003] 64175.641970: funcgraph_entry:        0.061 us   |        __local_bh_enable_ip();
+      httpclient-134737 [003] 64175.641970: funcgraph_exit:         0.181 us   |      }
+      httpclient-134737 [003] 64175.641970: funcgraph_exit:         0.872 us   |    }
+      httpclient-134737 [003] 64175.641970: funcgraph_entry:        0.050 us   |    vsock_addr_cast();
+      httpclient-134737 [003] 64175.641970: funcgraph_entry:                   |    vsock_assign_transport() {
+      httpclient-134737 [003] 64175.641971: funcgraph_entry:                   |      mutex_lock() {
+      httpclient-134737 [003] 64175.641971: funcgraph_entry:        0.051 us   |        __cond_resched();
+      httpclient-134737 [003] 64175.641971: funcgraph_exit:         0.171 us   |      }
+      httpclient-134737 [003] 64175.641971: funcgraph_entry:        0.050 us   |      try_module_get();
+      httpclient-134737 [003] 64175.641971: funcgraph_entry:        0.050 us   |      mutex_unlock();
+      httpclient-134737 [003] 64175.641971: funcgraph_entry:                   |      virtio_transport_do_socket_init() {
+      httpclient-134737 [003] 64175.641971: funcgraph_entry:                   |        __kmalloc_cache_noprof() {
+      httpclient-134737 [003] 64175.641972: funcgraph_entry:        0.070 us   |          __cond_resched();
+      httpclient-134737 [003] 64175.641972: funcgraph_exit:         0.271 us   |        }
+      httpclient-134737 [003] 64175.641972: funcgraph_exit:         0.581 us   |      }
+      httpclient-134737 [003] 64175.641972: funcgraph_exit:         1.603 us   |    }
+      httpclient-134737 [003] 64175.641972: funcgraph_entry:        0.050 us   |    virtio_transport_stream_allow();
+      httpclient-134737 [003] 64175.641973: funcgraph_entry:        0.050 us   |    vsock_loopback_msgzerocopy_allow();
+      httpclient-134737 [003] 64175.641973: funcgraph_entry:        0.050 us   |    vsock_addr_bound();
+      httpclient-134737 [003] 64175.641973: funcgraph_entry:        0.060 us   |    vsock_addr_init();
+      httpclient-134737 [003] 64175.641973: funcgraph_entry:                   |    __vsock_bind() {
+      httpclient-134737 [003] 64175.641973: funcgraph_entry:        0.050 us   |      vsock_addr_bound();
+      httpclient-134737 [003] 64175.641973: funcgraph_entry:        0.050 us   |      _raw_spin_lock_bh();
+      httpclient-134737 [003] 64175.641973: funcgraph_entry:        0.050 us   |      vsock_addr_init();
+      httpclient-134737 [003] 64175.641973: funcgraph_entry:        0.160 us   |      __vsock_find_bound_socket();
+      httpclient-134737 [003] 64175.641974: funcgraph_entry:        0.050 us   |      vsock_addr_init();
+      httpclient-134737 [003] 64175.641974: funcgraph_entry:                   |      _raw_spin_unlock_bh() {
+      httpclient-134737 [003] 64175.641974: funcgraph_entry:        0.050 us   |        __local_bh_enable_ip();
+      httpclient-134737 [003] 64175.641974: funcgraph_exit:         0.170 us   |      }
+      httpclient-134737 [003] 64175.641974: funcgraph_exit:         1.052 us   |    }
+      httpclient-134737 [003] 64175.641974: funcgraph_entry:                   |    virtio_transport_connect() {
+      httpclient-134737 [003] 64175.641974: funcgraph_entry:                   |      virtio_transport_send_pkt_info() {
+      httpclient-134737 [003] 64175.641974: funcgraph_entry:        0.050 us   |        vsock_core_get_transport();
+      httpclient-134737 [003] 64175.641975: funcgraph_entry:        0.050 us   |        vsock_loopback_get_local_cid();
+      httpclient-134737 [003] 64175.641975: funcgraph_entry:                   |        virtio_transport_alloc_skb() {
+      httpclient-134737 [003] 64175.641975: funcgraph_entry:                   |          alloc_skb_with_frags() {
+      httpclient-134737 [003] 64175.641975: funcgraph_entry:                   |            __alloc_skb() {
+      httpclient-134737 [003] 64175.641975: funcgraph_entry:        0.160 us   |              napi_skb_cache_get();
+      httpclient-134737 [003] 64175.641975: funcgraph_entry:        0.050 us   |              __local_bh_enable_ip();
+      httpclient-134737 [003] 64175.641976: funcgraph_entry:                   |              kmem_cache_alloc_node_noprof() {
+      httpclient-134737 [003] 64175.641976: funcgraph_entry:        0.050 us   |                __cond_resched();
+      httpclient-134737 [003] 64175.641976: funcgraph_exit:         0.441 us   |              }
+      httpclient-134737 [003] 64175.641976: funcgraph_entry:                   |              kmalloc_reserve() {
+      httpclient-134737 [003] 64175.641976: funcgraph_entry:                   |                kmem_cache_alloc_node_noprof() {
+      httpclient-134737 [003] 64175.641976: funcgraph_entry:        0.050 us   |                  __cond_resched();
+      httpclient-134737 [003] 64175.641976: funcgraph_exit:         0.391 us   |                }
+      httpclient-134737 [003] 64175.641977: funcgraph_exit:         0.511 us   |              }
+      httpclient-134737 [003] 64175.641977: funcgraph_entry:        0.060 us   |              __build_skb_around();
+      httpclient-134737 [003] 64175.641977: funcgraph_exit:         1.793 us   |            }
+      httpclient-134737 [003] 64175.641977: funcgraph_exit:         2.003 us   |          }
+      httpclient-134737 [003] 64175.641977: funcgraph_entry:        0.070 us   |          skb_set_owner_w();
+      httpclient-134737 [003] 64175.641977: funcgraph_exit:         2.465 us   |        }
+      httpclient-134737 [003] 64175.641977: funcgraph_entry:        0.050 us   |        _raw_spin_lock_bh();
+      httpclient-134737 [003] 64175.641977: funcgraph_entry:                   |        _raw_spin_unlock_bh() {
+      httpclient-134737 [003] 64175.641977: funcgraph_entry:        0.061 us   |          __local_bh_enable_ip();
+      httpclient-134737 [003] 64175.641978: funcgraph_exit:         0.181 us   |        }
+      httpclient-134737 [003] 64175.641978: funcgraph_entry:                   |        vsock_loopback_send_pkt() {
+      httpclient-134737 [003] 64175.641978: funcgraph_entry:        0.060 us   |          _raw_spin_lock_bh();
+      httpclient-134737 [003] 64175.641978: funcgraph_entry:                   |          _raw_spin_unlock_bh() {
+      httpclient-134737 [003] 64175.641978: funcgraph_entry:        0.050 us   |            __local_bh_enable_ip();
+      httpclient-134737 [003] 64175.641978: funcgraph_exit:         0.181 us   |          }
+      httpclient-134737 [003] 64175.641978: funcgraph_entry:                   |          queue_work_on() {
+      httpclient-134737 [003] 64175.641978: funcgraph_entry:        0.070 us   |            clear_pending_if_disabled();
+      httpclient-134737 [003] 64175.641978: funcgraph_entry:                   |            __queue_work() {
+      httpclient-134737 [003] 64175.641979: funcgraph_entry:        0.050 us   |              __rcu_read_lock();
+      httpclient-134737 [003] 64175.641979: funcgraph_entry:        0.060 us   |              _raw_spin_lock();
+      httpclient-134737 [003] 64175.641980: funcgraph_entry:                   |                arch_irq_work_raise() {
+      httpclient-134737 [003] 64175.641980: funcgraph_entry:        0.070 us   |                  default_send_IPI_self();
+      httpclient-134737 [003] 64175.641980: funcgraph_entry:        0.111 us   |                  apic_mem_wait_icr_idle();
+      httpclient-134737 [003] 64175.641980: funcgraph_exit:         0.551 us   |                }
+      httpclient-134737 [003] 64175.641980: funcgraph_entry:        0.070 us   |              _raw_spin_unlock();
+      httpclient-134737 [003] 64175.641980: funcgraph_entry:        0.060 us   |              _raw_spin_lock();
+      httpclient-134737 [003] 64175.641981: funcgraph_entry:        0.101 us   |              pwq_tryinc_nr_active();
+      httpclient-134737 [003] 64175.641981: funcgraph_entry:                   |              kick_pool() {
+      httpclient-134737 [003] 64175.641981: funcgraph_entry:                   |                wake_up_process() {
+      httpclient-134737 [003] 64175.641981: funcgraph_entry:                   |                  try_to_wake_up() {
+      httpclient-134737 [003] 64175.641981: funcgraph_entry:        0.050 us   |                    _raw_spin_lock_irqsave();
+      httpclient-134737 [003] 64175.641982: funcgraph_entry:        0.191 us   |                    __traceiter_sched_waking();
+      httpclient-134737 [003] 64175.641982: funcgraph_entry:        0.060 us   |                    kthread_is_per_cpu();
+      httpclient-134737 [003] 64175.641982: funcgraph_entry:        0.070 us   |                    ttwu_queue_wakelist();
+      httpclient-134737 [003] 64175.641983: funcgraph_entry:                   |                    raw_spin_rq_lock_nested() {
+      httpclient-134737 [003] 64175.641983: funcgraph_entry:        0.060 us   |                      _raw_spin_lock();
+      httpclient-134737 [003] 64175.641983: funcgraph_exit:         0.190 us   |                    }
+      httpclient-134737 [003] 64175.641983: funcgraph_entry:                   |                    update_rq_clock() {
+      httpclient-134737 [003] 64175.641983: funcgraph_entry:        0.070 us   |                      arch_scale_cpu_capacity();
+      httpclient-134737 [003] 64175.641983: funcgraph_exit:         0.191 us   |                    }
+      httpclient-134737 [003] 64175.641983: funcgraph_entry:                   |                    ttwu_do_activate() {
+      httpclient-134737 [003] 64175.641983: funcgraph_entry:                   |                      enqueue_task() {
+      httpclient-134737 [003] 64175.641983: funcgraph_entry:                   |                        enqueue_task_fair() {
+      httpclient-134737 [003] 64175.641984: funcgraph_entry:                   |                          update_curr() {
+      httpclient-134737 [003] 64175.641984: funcgraph_entry:        0.050 us   |                            update_se();
+      httpclient-134737 [003] 64175.641984: funcgraph_entry:        0.060 us   |                            __calc_delta.constprop.0();
+      httpclient-134737 [003] 64175.641984: funcgraph_exit:         0.290 us   |                          }
+      httpclient-134737 [003] 64175.641984: funcgraph_entry:        0.110 us   |                          __update_load_avg_se();
+      httpclient-134737 [003] 64175.641984: funcgraph_entry:        0.070 us   |                          __update_load_avg_cfs_rq();
+      httpclient-134737 [003] 64175.641984: funcgraph_entry:        0.060 us   |                          update_cfs_group();
+      httpclient-134737 [003] 64175.641984: funcgraph_entry:                   |                          place_entity() {
+      httpclient-134737 [003] 64175.641984: funcgraph_entry:        0.050 us   |                            avg_vruntime();
+      httpclient-134737 [003] 64175.641985: funcgraph_exit:         0.190 us   |                          }
+      httpclient-134737 [003] 64175.641985: funcgraph_entry:        0.070 us   |                          __enqueue_entity();
+      httpclient-134737 [003] 64175.641985: funcgraph_entry:        0.120 us   |                          hrtick_update();
+      httpclient-134737 [003] 64175.641985: funcgraph_exit:         1.944 us   |                        }
+      httpclient-134737 [003] 64175.641985: funcgraph_entry:                   |                        psi_task_change() {
+      httpclient-134737 [003] 64175.641985: funcgraph_entry:        0.261 us   |                          psi_flags_change();
+      httpclient-134737 [003] 64175.641986: funcgraph_entry:                   |                          psi_group_change() {
+      httpclient-134737 [003] 64175.641986: funcgraph_entry:        0.070 us   |                            record_times();
+      httpclient-134737 [003] 64175.641986: funcgraph_exit:         0.311 us   |                          }
+      httpclient-134737 [003] 64175.641986: funcgraph_exit:         1.112 us   |                        }
+      httpclient-134737 [003] 64175.641986: funcgraph_exit:         3.296 us   |                      }
+      httpclient-134737 [003] 64175.641986: funcgraph_entry:                   |                      wakeup_preempt() {
+      httpclient-134737 [003] 64175.641987: funcgraph_entry:                   |                        check_preempt_wakeup_fair() {
+      httpclient-134737 [003] 64175.641987: funcgraph_entry:                   |                          update_curr() {
+      httpclient-134737 [003] 64175.641987: funcgraph_entry:        0.050 us   |                            update_se();
+      httpclient-134737 [003] 64175.641987: funcgraph_exit:         0.180 us   |                          }
+      httpclient-134737 [003] 64175.641987: funcgraph_entry:                   |                          __pick_eevdf() {
+      httpclient-134737 [003] 64175.641987: funcgraph_entry:        0.060 us   |                            vruntime_eligible();
+      httpclient-134737 [003] 64175.641987: funcgraph_entry:        0.070 us   |                            vruntime_eligible();
+      httpclient-134737 [003] 64175.641987: funcgraph_exit:         0.321 us   |                          }
+      httpclient-134737 [003] 64175.641987: funcgraph_entry:                   |                          resched_curr_lazy() {
+      httpclient-134737 [003] 64175.641987: funcgraph_entry:        0.070 us   |                            __resched_curr();
+      httpclient-134737 [003] 64175.641987: funcgraph_exit:         0.200 us   |                          }
+      httpclient-134737 [003] 64175.641988: funcgraph_exit:         1.011 us   |                        }
+      httpclient-134737 [003] 64175.641988: funcgraph_exit:         1.153 us   |                      }
+      httpclient-134737 [003] 64175.641988: funcgraph_entry:        0.360 us   |                      __traceiter_sched_wakeup();
+      httpclient-134737 [003] 64175.641988: funcgraph_exit:         5.130 us   |                    }
+      httpclient-134737 [003] 64175.641988: funcgraph_entry:                   |                    raw_spin_rq_unlock() {
+      httpclient-134737 [003] 64175.641988: funcgraph_entry:        0.060 us   |                      _raw_spin_unlock();
+      httpclient-134737 [003] 64175.641988: funcgraph_exit:         0.180 us   |                    }
+      httpclient-134737 [003] 64175.641988: funcgraph_entry:        0.050 us   |                    _raw_spin_unlock_irqrestore();
+      httpclient-134737 [003] 64175.641989: funcgraph_exit:         7.394 us   |                  }
+      httpclient-134737 [003] 64175.641989: funcgraph_exit:         7.525 us   |                }
+      httpclient-134737 [003] 64175.641989: funcgraph_exit:         7.825 us   |              }
+      httpclient-134737 [003] 64175.641989: funcgraph_entry:        0.060 us   |              _raw_spin_unlock();
+      httpclient-134737 [003] 64175.641989: funcgraph_entry:        0.070 us   |              __rcu_read_unlock();
+      httpclient-134737 [003] 64175.641989: funcgraph_exit:       + 10.650 us  |            }
+      httpclient-134737 [003] 64175.641989: funcgraph_entry:        0.060 us   |            irq_enter_rcu();
+      httpclient-134737 [003] 64175.641990: funcgraph_entry:                   |            __sysvec_irq_work() {
+      httpclient-134737 [003] 64175.641990: funcgraph_entry:                   |              __wake_up() {
+      httpclient-134737 [003] 64175.641990: funcgraph_entry:        0.050 us   |                _raw_spin_lock_irqsave();
+      httpclient-134737 [003] 64175.641990: funcgraph_entry:        0.060 us   |                __wake_up_common();
+      httpclient-134737 [003] 64175.641990: funcgraph_entry:        0.070 us   |                _raw_spin_unlock_irqrestore();
+      httpclient-134737 [003] 64175.641991: funcgraph_exit:         0.631 us   |              }
+      httpclient-134737 [003] 64175.641991: funcgraph_entry:        0.060 us   |              _raw_spin_lock();
+      httpclient-134737 [003] 64175.641991: funcgraph_entry:        0.060 us   |              _raw_spin_unlock();
+      httpclient-134737 [003] 64175.641991: funcgraph_entry:                   |              __wake_up() {
+      httpclient-134737 [003] 64175.641991: funcgraph_entry:        0.050 us   |                _raw_spin_lock_irqsave();
+      httpclient-134737 [003] 64175.641991: funcgraph_entry:                   |                __wake_up_common() {
+      httpclient-134737 [003] 64175.641991: funcgraph_entry:                   |                  pollwake() {
+      httpclient-134737 [003] 64175.641991: funcgraph_entry:                   |                    default_wake_function() {
+      httpclient-134737 [003] 64175.641991: funcgraph_entry:                   |                      try_to_wake_up() {
+      httpclient-134737 [003] 64175.641991: funcgraph_entry:        0.050 us   |                        _raw_spin_lock_irqsave();
+      httpclient-134737 [003] 64175.641992: funcgraph_entry:        0.090 us   |                        __traceiter_sched_waking();
+      httpclient-134737 [003] 64175.641992: funcgraph_entry:                   |                        select_task_rq_fair() {
+      httpclient-134737 [003] 64175.641992: funcgraph_entry:        0.050 us   |                          __rcu_read_lock();
+      httpclient-134737 [003] 64175.641992: funcgraph_entry:        0.060 us   |                          wake_affine();
+      httpclient-134737 [003] 64175.641992: funcgraph_entry:        0.050 us   |                          __rcu_read_unlock();
+      httpclient-134737 [003] 64175.641992: funcgraph_exit:         0.521 us   |                        }
+      httpclient-134737 [003] 64175.641992: funcgraph_entry:                   |                        ttwu_queue_wakelist() {
+      httpclient-134737 [003] 64175.641992: funcgraph_entry:                   |                          __smp_call_single_queue() {
+      httpclient-134737 [003] 64175.641993: funcgraph_entry:        0.060 us   |                            call_function_single_prep_ipi();
+      httpclient-134737 [003] 64175.641993: funcgraph_exit:         0.230 us   |                          }
+      httpclient-134737 [003] 64175.641993: funcgraph_exit:         0.380 us   |                        }
+      httpclient-134737 [003] 64175.641993: funcgraph_entry:        0.051 us   |                        _raw_spin_unlock_irqrestore();
+      httpclient-134737 [003] 64175.641993: funcgraph_exit:         1.573 us   |                      }
+      httpclient-134737 [003] 64175.641993: funcgraph_exit:         1.683 us   |                    }
+      httpclient-134737 [003] 64175.641993: funcgraph_exit:         1.814 us   |                  }
+      httpclient-134737 [003] 64175.641993: funcgraph_exit:         2.074 us   |                }
+      httpclient-134737 [003] 64175.641993: funcgraph_entry:        0.050 us   |                _raw_spin_unlock_irqrestore();
+      httpclient-134737 [003] 64175.641993: funcgraph_exit:         2.414 us   |              }
+      httpclient-134737 [003] 64175.641993: funcgraph_exit:         3.597 us   |            }
+      httpclient-134737 [003] 64175.641993: funcgraph_entry:                   |            irq_exit_rcu() {
+      httpclient-134737 [003] 64175.641994: funcgraph_entry:        0.060 us   |              sched_core_idle_cpu();
+      httpclient-134737 [003] 64175.641994: funcgraph_exit:         0.210 us   |            }
+      httpclient-134737 [003] 64175.641994: funcgraph_exit:       + 15.709 us  |          }
+      httpclient-134737 [003] 64175.641994: funcgraph_exit:       + 16.270 us  |        }
+      httpclient-134737 [003] 64175.641994: funcgraph_exit:       + 19.708 us  |      }
+      httpclient-134737 [003] 64175.641994: funcgraph_exit:       + 19.828 us  |    }
+      httpclient-134737 [003] 64175.641994: funcgraph_entry:                   |    prepare_to_wait() {
+      httpclient-134737 [003] 64175.641994: funcgraph_entry:        0.060 us   |      _raw_spin_lock_irqsave();
+      httpclient-134737 [003] 64175.641994: funcgraph_entry:        0.070 us   |      _raw_spin_unlock_irqrestore();
+      httpclient-134737 [003] 64175.641994: funcgraph_exit:         0.330 us   |    }
+      httpclient-134737 [003] 64175.641995: funcgraph_entry:                   |    mod_delayed_work_on() {
+      httpclient-134737 [003] 64175.641995: funcgraph_entry:                   |      try_to_grab_pending() {
+      httpclient-134737 [003] 64175.641995: funcgraph_entry:        0.070 us   |        timer_delete();
+      httpclient-134737 [003] 64175.641995: funcgraph_exit:         0.200 us   |      }
+      httpclient-134737 [003] 64175.641995: funcgraph_entry:        0.050 us   |      clear_pending_if_disabled();
+      httpclient-134737 [003] 64175.641995: funcgraph_entry:                   |      __queue_delayed_work() {
+      httpclient-134737 [003] 64175.641995: funcgraph_entry:        0.060 us   |        housekeeping_enabled();
+      httpclient-134737 [003] 64175.641995: funcgraph_entry:                   |        add_timer_global() {
+      httpclient-134737 [003] 64175.641995: funcgraph_entry:                   |          lock_timer_base() {
+      httpclient-134737 [003] 64175.641995: funcgraph_entry:        0.050 us   |            _raw_spin_lock_irqsave();
+      httpclient-134737 [003] 64175.641996: funcgraph_exit:         0.181 us   |          }
+      httpclient-134737 [003] 64175.641996: funcgraph_entry:        0.060 us   |          detach_if_pending();
+      httpclient-134737 [003] 64175.641996: funcgraph_entry:        0.080 us   |          calc_wheel_index();
+      httpclient-134737 [003] 64175.641996: funcgraph_entry:        0.171 us   |          enqueue_timer();
+      httpclient-134737 [003] 64175.641996: funcgraph_entry:        0.070 us   |          _raw_spin_unlock_irqrestore();
+      httpclient-134737 [003] 64175.641996: funcgraph_exit:         1.082 us   |        }
+      httpclient-134737 [003] 64175.641996: funcgraph_exit:         1.393 us   |      }
+      httpclient-134737 [003] 64175.641996: funcgraph_exit:         1.913 us   |    }
+      httpclient-134737 [003] 64175.641997: funcgraph_entry:                   |    finish_wait() {
+      httpclient-134737 [003] 64175.641997: funcgraph_entry:        0.061 us   |      _raw_spin_lock_irqsave();
+      httpclient-134737 [003] 64175.641997: funcgraph_entry:        0.060 us   |      _raw_spin_unlock_irqrestore();
+      httpclient-134737 [003] 64175.641997: funcgraph_exit:         0.291 us   |    }
+      httpclient-134737 [003] 64175.641997: funcgraph_entry:                   |    release_sock() {
+      httpclient-134737 [003] 64175.641997: funcgraph_entry:        0.050 us   |      _raw_spin_lock_bh();
+      httpclient-134737 [003] 64175.641997: funcgraph_entry:                   |      _raw_spin_unlock_bh() {
+      httpclient-134737 [003] 64175.641997: funcgraph_entry:        0.070 us   |        __local_bh_enable_ip();
+      httpclient-134737 [003] 64175.641997: funcgraph_exit:         0.180 us   |      }
+      httpclient-134737 [003] 64175.641998: funcgraph_exit:         0.721 us   |    }
+      httpclient-134737 [003] 64175.641998: funcgraph_exit:       + 29.466 us  |  }

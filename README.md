@@ -253,3 +253,137 @@ close(4)                                = 0
 
 sudo trace-cmd record -p function_graph -g __sys_accept4 -F target/release/httpserver vsock:1:8000
 sudo trace-cmd report > report.txt
+
+## A quick look at connect
+
+Using kernel with accept vsock fix.
+
+```
+$ target/release/httpserver vsock:1:800
+```
+
+```
+$ REPEAT=1000 target/release/httpclient vsock:1:8000
+...
+client 12 us
+client 15 us
+client 12 us
+client 17 us
+client 14 us
+...
+```
+
+```
+$ strace target/release/httpclient vsock:1:8000
+...
+epoll_create1(EPOLL_CLOEXEC)            = 3
+eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK)   = 4
+epoll_ctl(3, EPOLL_CTL_ADD, 4, {events=EPOLLIN|EPOLLRDHUP|EPOLLET, data={u32=0, u64=0}}) = 0
+fcntl(3, F_DUPFD_CLOEXEC, 3)            = 5
+socketpair(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0, [6, 7]) = 0
+fcntl(6, F_DUPFD_CLOEXEC, 3)            = 8
+epoll_ctl(5, EPOLL_CTL_ADD, 8, {events=EPOLLIN|EPOLLRDHUP|EPOLLET, data={u32=1, u64=1}}) = 0
+socket(AF_VSOCK, SOCK_STREAM, 0)        = 9
+fcntl(9, F_SETFL, O_RDONLY|O_NONBLOCK|O_CLOEXEC) = 0
+connect(9, {sa_family=AF_VSOCK, svm_cid=VMADDR_CID_LOCAL, svm_port=0x1f40, svm_flags=0}, 16) = -1 EINPROGRESS (Operation now in progress)
+ioctl(9, FIONBIO, [1])                  = 0
+epoll_ctl(5, EPOLL_CTL_ADD, 9, {events=EPOLLIN|EPOLLOUT|EPOLLRDHUP|EPOLLET, data={u32=2890620800, u64=105727805579136}}) = 0
+epoll_wait(3, [{events=EPOLLOUT, data={u32=2890620800, u64=105727805579136}}], 1024, -1) = 1
+getsockopt(9, SOL_SOCKET, SO_ERROR, [0], [4]) = 0
+sendto(9, "GET / HTTP/1.1\r\nHost: localhost\r"..., 54, MSG_NOSIGNAL, NULL, 0) = 54
+shutdown(9, SHUT_WR)                    = 0
+epoll_wait(3, [{events=EPOLLIN|EPOLLHUP|EPOLLRDHUP, data={u32=2890620800, u64=105727805579136}}], 1024, -1) = 1
+recvfrom(9, "HTTP/1.1 200 OK\r\nConnection: clo", 32, 0, NULL, NULL) = 32
+recvfrom(9, "se\r\nContent-Length: 13\r\nContent-", 32, 0, NULL, NULL) = 32
+recvfrom(9, "Type: text/plain; charset=utf-8\r"..., 64, 0, NULL, NULL) = 48
+recvfrom(9, "", 144, 0, NULL, NULL)     = 0
+epoll_ctl(5, EPOLL_CTL_DEL, 9, NULL)    = 0
+close(9)                                = 0
+...
+```
+
+```
+$ REPEAT=1000 stra-e connect -T target/release/httpclient vsock:1:800
+...
+connect(9, {sa_family=AF_VSOCK, svm_cid=VMADDR_CID_LOCAL, svm_port=0x1f40, svm_flags=0}, 16) = -1 EINPROGRESS (Operation now in progress) <0.000003>
+client 71 us
+connect(9, {sa_family=AF_VSOCK, svm_cid=VMADDR_CID_LOCAL, svm_port=0x1f40, svm_flags=0}, 16) = -1 EINPROGRESS (Operation now in progress) <0.000003>
+client 83 us
+connect(9, {sa_family=AF_VSOCK, svm_cid=VMADDR_CID_LOCAL, svm_port=0x1f40, svm_flags=0}, 16) = -1 EINPROGRESS (Operation now in progress) <0.000002>
+client 71 us
+...
+```
+
+
+[report-connect-vsock.txt](./report-connect-vsock.txt)
+```
+$ sudo trace-cmd record -p function_graph -g vsock_connect -F target/release/httpclient vsock:1:8000; \
+sudo trace-cmd report > report-connect-vsock.txt
+```
+
+
+```
+$ target/release/httpserver tcp:127.0.0.1:8000
+```
+
+```
+$ REPEAT=1000 target/release/httpclient tcp:127.0.0.1:8000
+...
+client 15 us
+client 16 us
+client 17 us
+client 15 us
+client 19 us
+...
+```
+
+```
+$ REPEAT=1000 strace -e connect -T target/release/httpclient tcp:127.0.0.1:800
+...
+connect(9, {sa_family=AF_INET, sin_port=htons(8000), sin_addr=inet_addr("127.0.0.1")}, 16) = -1 EINPROGRESS (Operation now in progress) <0.000008>
+client 65 us
+connect(9, {sa_family=AF_INET, sin_port=htons(8000), sin_addr=inet_addr("127.0.0.1")}, 16) = -1 EINPROGRESS (Operation now in progress) <0.000008>
+client 65 us
+connect(9, {sa_family=AF_INET, sin_port=htons(8000), sin_addr=inet_addr("127.0.0.1")}, 16) = -1 EINPROGRESS (Operation now in progress) <0.000008>
+client 67 us
+...
+```
+
+
+[report-connect-inet.txt](./report-connect-inet.txt)
+```
+$ sudo trace-cmd record -p function_graph -g inet_stream_connect -F target/release/httpclient tcp:127.0.0.1:8000; \
+sudo trace-cmd report > report-connect-inet.txt
+```
+
+```
+$ rm -f target/http.sock; target/release/httpserver target/http.sock
+```
+
+```
+$ REPEAT=1000 target/release/httpclient unix:target/http.sock
+...
+client 7 us
+client 7 us
+client 7 us
+client 7 us
+client 7 us
+...
+```
+
+```
+$ REPEAT=1000 strace -e connect -T target/release/httpclient unix:target/http.sock
+...
+connect(9, {sa_family=AF_UNIX, sun_path="target/http.sock"}, 19) = 0 <0.000004>
+client 66 us
+connect(9, {sa_family=AF_UNIX, sun_path="target/http.sock"}, 19) = 0 <0.000004>
+client 71 us
+connect(9, {sa_family=AF_UNIX, sun_path="target/http.sock"}, 19) = 0 <0.000003>
+...
+```
+
+[report-connect-unix.txt](./report-connect-unix.txt)
+```
+$ sudo trace-cmd record -p function_graph -g unix_stream_connect -F target/release/httpclient unix:target/http.sock; \
+sudo trace-cmd report > report-connect-unix.txt
+```

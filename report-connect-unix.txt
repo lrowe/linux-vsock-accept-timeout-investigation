@@ -1,0 +1,295 @@
+cpus=16
+      httpclient-135904 [012] 65324.172353: funcgraph_entry:                   |  unix_stream_connect() {
+      httpclient-135904 [012] 65324.172354: funcgraph_entry:                   |    pidfs_register_pid() {
+      httpclient-135904 [012] 65324.172354: funcgraph_entry:        0.271 us   |      __cond_resched();
+      httpclient-135904 [012] 65324.172354: funcgraph_exit:         0.571 us   |    }
+      httpclient-135904 [012] 65324.172355: funcgraph_entry:                   |    unix_create1() {
+      httpclient-135904 [012] 65324.172355: funcgraph_entry:        0.070 us   |      get_max_files();
+      httpclient-135904 [012] 65324.172355: funcgraph_entry:                   |      sk_alloc() {
+      httpclient-135904 [012] 65324.172355: funcgraph_entry:                   |        sk_prot_alloc() {
+      httpclient-135904 [012] 65324.172355: funcgraph_entry:                   |          kmem_cache_alloc_noprof() {
+      httpclient-135904 [012] 65324.172355: funcgraph_entry:        0.050 us   |            __cond_resched();
+      httpclient-135904 [012] 65324.172355: funcgraph_entry:                   |            __memcg_slab_post_alloc_hook() {
+      httpclient-135904 [012] 65324.172355: funcgraph_entry:                   |              obj_cgroup_charge_account() {
+      httpclient-135904 [012] 65324.172355: funcgraph_entry:        0.070 us   |                __account_obj_stock();
+      httpclient-135904 [012] 65324.172356: funcgraph_exit:         0.200 us   |              }
+      httpclient-135904 [012] 65324.172356: funcgraph_entry:        0.060 us   |              __rcu_read_lock();
+      httpclient-135904 [012] 65324.172356: funcgraph_entry:        0.070 us   |              __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172356: funcgraph_exit:         0.672 us   |            }
+      httpclient-135904 [012] 65324.172356: funcgraph_exit:         1.052 us   |          }
+      httpclient-135904 [012] 65324.172356: funcgraph_entry:                   |          security_sk_alloc() {
+      httpclient-135904 [012] 65324.172356: funcgraph_entry:                   |            lsm_blob_alloc() {
+      httpclient-135904 [012] 65324.172356: funcgraph_entry:                   |              __kmalloc_noprof() {
+      httpclient-135904 [012] 65324.172356: funcgraph_entry:        0.060 us   |                __cond_resched();
+      httpclient-135904 [012] 65324.172357: funcgraph_exit:         0.361 us   |              }
+      httpclient-135904 [012] 65324.172357: funcgraph_exit:         0.571 us   |            }
+      httpclient-135904 [012] 65324.172357: funcgraph_entry:        0.050 us   |            apparmor_sk_alloc_security();
+      httpclient-135904 [012] 65324.172357: funcgraph_exit:         0.821 us   |          }
+      httpclient-135904 [012] 65324.172357: funcgraph_entry:        0.060 us   |          try_module_get();
+      httpclient-135904 [012] 65324.172357: funcgraph_exit:         2.234 us   |        }
+      httpclient-135904 [012] 65324.172357: funcgraph_entry:        0.060 us   |        __init_waitqueue_head();
+      httpclient-135904 [012] 65324.172357: funcgraph_entry:                   |        mem_cgroup_sk_alloc() {
+      httpclient-135904 [012] 65324.172357: funcgraph_entry:        0.050 us   |          __rcu_read_lock();
+      httpclient-135904 [012] 65324.172357: funcgraph_entry:        0.051 us   |          __rcu_read_lock();
+      httpclient-135904 [012] 65324.172358: funcgraph_entry:        0.060 us   |          __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172358: funcgraph_entry:        0.060 us   |          __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172358: funcgraph_exit:         0.541 us   |        }
+      httpclient-135904 [012] 65324.172358: funcgraph_entry:                   |        cgroup_sk_alloc() {
+      httpclient-135904 [012] 65324.172358: funcgraph_entry:        0.060 us   |          __rcu_read_lock();
+      httpclient-135904 [012] 65324.172358: funcgraph_entry:        0.060 us   |          __rcu_read_lock();
+      httpclient-135904 [012] 65324.172358: funcgraph_entry:        0.070 us   |          __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172358: funcgraph_entry:        0.050 us   |          __rcu_read_lock();
+      httpclient-135904 [012] 65324.172358: funcgraph_entry:        0.060 us   |          __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172359: funcgraph_entry:        0.060 us   |          __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172359: funcgraph_exit:         0.812 us   |        }
+      httpclient-135904 [012] 65324.172359: funcgraph_entry:        0.060 us   |        __rcu_read_lock();
+      httpclient-135904 [012] 65324.172359: funcgraph_entry:        0.060 us   |        __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172359: funcgraph_entry:        0.050 us   |        __rcu_read_lock();
+      httpclient-135904 [012] 65324.172359: funcgraph_entry:        0.050 us   |        __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172359: funcgraph_exit:         4.419 us   |      }
+      httpclient-135904 [012] 65324.172359: funcgraph_entry:                   |      sock_init_data() {
+      httpclient-135904 [012] 65324.172359: funcgraph_entry:                   |        make_kuid() {
+      httpclient-135904 [012] 65324.172359: funcgraph_entry:        0.060 us   |          map_id_range_down();
+      httpclient-135904 [012] 65324.172360: funcgraph_exit:         0.181 us   |        }
+      httpclient-135904 [012] 65324.172360: funcgraph_entry:                   |        sock_init_data_uid() {
+      httpclient-135904 [012] 65324.172360: funcgraph_entry:        0.050 us   |          timer_init_key();
+      httpclient-135904 [012] 65324.172360: funcgraph_exit:         0.190 us   |        }
+      httpclient-135904 [012] 65324.172360: funcgraph_exit:         0.631 us   |      }
+      httpclient-135904 [012] 65324.172360: funcgraph_entry:        0.050 us   |      mutex_init_generic();
+      httpclient-135904 [012] 65324.172360: funcgraph_entry:        0.051 us   |      mutex_init_generic();
+      httpclient-135904 [012] 65324.172360: funcgraph_entry:        0.050 us   |      __init_waitqueue_head();
+      httpclient-135904 [012] 65324.172360: funcgraph_entry:        0.060 us   |      _raw_spin_lock();
+      httpclient-135904 [012] 65324.172361: funcgraph_entry:        0.050 us   |      _raw_spin_unlock();
+      httpclient-135904 [012] 65324.172361: funcgraph_exit:         6.232 us   |    }
+      httpclient-135904 [012] 65324.172361: funcgraph_entry:                   |    sock_wmalloc() {
+      httpclient-135904 [012] 65324.172361: funcgraph_entry:                   |      __alloc_skb() {
+      httpclient-135904 [012] 65324.172361: funcgraph_entry:        0.050 us   |        napi_skb_cache_get();
+      httpclient-135904 [012] 65324.172361: funcgraph_entry:        0.080 us   |        __local_bh_enable_ip();
+      httpclient-135904 [012] 65324.172362: funcgraph_entry:                   |        kmalloc_reserve() {
+      httpclient-135904 [012] 65324.172362: funcgraph_entry:                   |          kmem_cache_alloc_node_noprof() {
+      httpclient-135904 [012] 65324.172362: funcgraph_entry:        0.050 us   |            __cond_resched();
+      httpclient-135904 [012] 65324.172362: funcgraph_exit:         0.481 us   |          }
+      httpclient-135904 [012] 65324.172362: funcgraph_entry:                   |            arch_irq_work_raise() {
+      httpclient-135904 [012] 65324.172363: funcgraph_entry:                   |              default_send_IPI_self() {
+      httpclient-135904 [012] 65324.172363: funcgraph_entry:                   |                __sysvec_irq_work() {
+      httpclient-135904 [012] 65324.172363: funcgraph_entry:                   |                  __wake_up() {
+      httpclient-135904 [012] 65324.172363: funcgraph_entry:        0.061 us   |                    _raw_spin_lock_irqsave();
+      httpclient-135904 [012] 65324.172363: funcgraph_entry:        0.060 us   |                    __wake_up_common();
+      httpclient-135904 [012] 65324.172363: funcgraph_entry:        0.060 us   |                    _raw_spin_unlock_irqrestore();
+      httpclient-135904 [012] 65324.172364: funcgraph_exit:         0.441 us   |                  }
+      httpclient-135904 [012] 65324.172364: funcgraph_entry:        0.050 us   |                  _raw_spin_lock();
+      httpclient-135904 [012] 65324.172364: funcgraph_entry:        0.050 us   |                  _raw_spin_unlock();
+      httpclient-135904 [012] 65324.172364: funcgraph_entry:                   |                  __wake_up() {
+      httpclient-135904 [012] 65324.172364: funcgraph_entry:        0.060 us   |                    _raw_spin_lock_irqsave();
+      httpclient-135904 [012] 65324.172364: funcgraph_entry:                   |                    __wake_up_common() {
+      httpclient-135904 [012] 65324.172364: funcgraph_entry:                   |                      pollwake() {
+      httpclient-135904 [012] 65324.172364: funcgraph_entry:                   |                        default_wake_function() {
+      httpclient-135904 [012] 65324.172364: funcgraph_entry:                   |                          try_to_wake_up() {
+      httpclient-135904 [012] 65324.172364: funcgraph_entry:        0.070 us   |                            _raw_spin_lock_irqsave();
+      httpclient-135904 [012] 65324.172365: funcgraph_entry:        0.331 us   |                            __traceiter_sched_waking();
+      httpclient-135904 [012] 65324.172365: funcgraph_entry:                   |                            select_task_rq_fair() {
+      httpclient-135904 [012] 65324.172365: funcgraph_entry:        0.050 us   |                              __rcu_read_lock();
+      httpclient-135904 [012] 65324.172365: funcgraph_entry:        0.070 us   |                              wake_affine();
+      httpclient-135904 [012] 65324.172366: funcgraph_entry:        0.060 us   |                              __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172366: funcgraph_exit:         0.571 us   |                            }
+      httpclient-135904 [012] 65324.172366: funcgraph_entry:                   |                            ttwu_queue_wakelist() {
+      httpclient-135904 [012] 65324.172366: funcgraph_entry:                   |                              __smp_call_single_queue() {
+      httpclient-135904 [012] 65324.172366: funcgraph_entry:        0.050 us   |                                call_function_single_prep_ipi();
+      httpclient-135904 [012] 65324.172366: funcgraph_exit:         0.220 us   |                              }
+      httpclient-135904 [012] 65324.172366: funcgraph_exit:         0.381 us   |                            }
+      httpclient-135904 [012] 65324.172366: funcgraph_entry:        0.050 us   |                            _raw_spin_unlock_irqrestore();
+      httpclient-135904 [012] 65324.172366: funcgraph_exit:         1.983 us   |                          }
+      httpclient-135904 [012] 65324.172366: funcgraph_exit:         2.114 us   |                        }
+      httpclient-135904 [012] 65324.172367: funcgraph_exit:         2.345 us   |                      }
+      httpclient-135904 [012] 65324.172367: funcgraph_exit:         2.515 us   |                    }
+      httpclient-135904 [012] 65324.172367: funcgraph_entry:        0.060 us   |                    _raw_spin_unlock_irqrestore();
+      httpclient-135904 [012] 65324.172367: funcgraph_exit:         2.875 us   |                  }
+      httpclient-135904 [012] 65324.172367: funcgraph_exit:         3.877 us   |                }
+      httpclient-135904 [012] 65324.172367: funcgraph_entry:                   |                irq_exit_rcu() {
+      httpclient-135904 [012] 65324.172367: funcgraph_exit:         0.080 us   |              }
+      httpclient-135904 [012] 65324.172367: funcgraph_entry:        0.140 us   |              apic_mem_wait_icr_idle();
+      httpclient-135904 [012] 65324.172367: funcgraph_exit:         4.979 us   |            }
+      httpclient-135904 [012] 65324.172368: funcgraph_exit:         6.072 us   |        }
+      httpclient-135904 [012] 65324.172368: funcgraph_entry:        0.070 us   |        __build_skb_around();
+      httpclient-135904 [012] 65324.172368: funcgraph_exit:         6.963 us   |      }
+      httpclient-135904 [012] 65324.172368: funcgraph_entry:        0.070 us   |      skb_set_owner_w();
+      httpclient-135904 [012] 65324.172368: funcgraph_exit:         7.404 us   |    }
+      httpclient-135904 [012] 65324.172368: funcgraph_entry:                   |    unix_find_other() {
+      httpclient-135904 [012] 65324.172369: funcgraph_entry:        0.090 us   |      unix_mkname_bsd();
+      httpclient-135904 [012] 65324.172369: funcgraph_entry:                   |      kern_path() {
+      httpclient-135904 [012] 65324.172369: funcgraph_entry:                   |        getname_kernel() {
+      httpclient-135904 [012] 65324.172369: funcgraph_entry:                   |          kmem_cache_alloc_noprof() {
+      httpclient-135904 [012] 65324.172369: funcgraph_entry:        0.050 us   |            __cond_resched();
+      httpclient-135904 [012] 65324.172369: funcgraph_exit:         0.261 us   |          }
+      httpclient-135904 [012] 65324.172369: funcgraph_exit:         0.421 us   |        }
+      httpclient-135904 [012] 65324.172369: funcgraph_entry:                   |        filename_lookup() {
+      httpclient-135904 [012] 65324.172369: funcgraph_entry:                   |          path_lookupat() {
+      httpclient-135904 [012] 65324.172369: funcgraph_entry:                   |            path_init() {
+      httpclient-135904 [012] 65324.172369: funcgraph_entry:        0.050 us   |              __rcu_read_lock();
+      httpclient-135904 [012] 65324.172370: funcgraph_exit:         0.180 us   |            }
+      httpclient-135904 [012] 65324.172370: funcgraph_entry:                   |            link_path_walk() {
+      httpclient-135904 [012] 65324.172370: funcgraph_entry:        0.050 us   |              security_inode_permission();
+      httpclient-135904 [012] 65324.172370: funcgraph_entry:                   |              lookup_fast() {
+      httpclient-135904 [012] 65324.172370: funcgraph_entry:        0.090 us   |                __d_lookup_rcu();
+      httpclient-135904 [012] 65324.172370: funcgraph_exit:         0.210 us   |              }
+      httpclient-135904 [012] 65324.172370: funcgraph_entry:        0.050 us   |              security_inode_permission();
+      httpclient-135904 [012] 65324.172370: funcgraph_entry:        0.060 us   |              make_vfsuid();
+      httpclient-135904 [012] 65324.172370: funcgraph_exit:         0.741 us   |            }
+      httpclient-135904 [012] 65324.172370: funcgraph_entry:                   |            lookup_fast() {
+      httpclient-135904 [012] 65324.172371: funcgraph_entry:        0.231 us   |              __d_lookup_rcu();
+      httpclient-135904 [012] 65324.172371: funcgraph_exit:         0.361 us   |            }
+      httpclient-135904 [012] 65324.172371: funcgraph_entry:                   |            complete_walk() {
+      httpclient-135904 [012] 65324.172371: funcgraph_entry:                   |              try_to_unlazy() {
+      httpclient-135904 [012] 65324.172371: funcgraph_entry:                   |                __legitimize_path() {
+      httpclient-135904 [012] 65324.172371: funcgraph_entry:        0.060 us   |                  __legitimize_mnt();
+      httpclient-135904 [012] 65324.172371: funcgraph_exit:         0.181 us   |                }
+      httpclient-135904 [012] 65324.172371: funcgraph_entry:        0.060 us   |                __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172372: funcgraph_exit:         0.681 us   |              }
+      httpclient-135904 [012] 65324.172372: funcgraph_exit:         0.801 us   |            }
+      httpclient-135904 [012] 65324.172372: funcgraph_entry:                   |            terminate_walk() {
+      httpclient-135904 [012] 65324.172372: funcgraph_entry:        0.070 us   |              dput();
+      httpclient-135904 [012] 65324.172372: funcgraph_entry:        0.060 us   |              mntput();
+      httpclient-135904 [012] 65324.172372: funcgraph_exit:         0.330 us   |            }
+      httpclient-135904 [012] 65324.172372: funcgraph_exit:         2.895 us   |          }
+      httpclient-135904 [012] 65324.172372: funcgraph_exit:         3.016 us   |        }
+      httpclient-135904 [012] 65324.172372: funcgraph_entry:                   |        putname() {
+      httpclient-135904 [012] 65324.172372: funcgraph_entry:        0.070 us   |          kmem_cache_free();
+      httpclient-135904 [012] 65324.172373: funcgraph_exit:         0.200 us   |        }
+      httpclient-135904 [012] 65324.172373: funcgraph_exit:         3.907 us   |      }
+      httpclient-135904 [012] 65324.172373: funcgraph_entry:                   |      inode_permission() {
+      httpclient-135904 [012] 65324.172373: funcgraph_entry:        0.050 us   |        make_vfsuid();
+      httpclient-135904 [012] 65324.172373: funcgraph_entry:        0.060 us   |        make_vfsgid();
+      httpclient-135904 [012] 65324.172373: funcgraph_entry:                   |        btrfs_permission() {
+      httpclient-135904 [012] 65324.172373: funcgraph_entry:                   |          generic_permission() {
+      httpclient-135904 [012] 65324.172374: funcgraph_entry:        0.060 us   |            make_vfsuid();
+      httpclient-135904 [012] 65324.172374: funcgraph_entry:                   |            get_inode_acl() {
+      httpclient-135904 [012] 65324.172374: funcgraph_entry:                   |              __get_acl() {
+      httpclient-135904 [012] 65324.172374: funcgraph_entry:                   |                get_cached_acl() {
+      httpclient-135904 [012] 65324.172374: funcgraph_entry:        0.050 us   |                  __rcu_read_lock();
+      httpclient-135904 [012] 65324.172374: funcgraph_entry:        0.050 us   |                  __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172374: funcgraph_exit:         0.331 us   |                }
+      httpclient-135904 [012] 65324.172374: funcgraph_exit:         0.461 us   |              }
+      httpclient-135904 [012] 65324.172374: funcgraph_exit:         0.581 us   |            }
+      httpclient-135904 [012] 65324.172374: funcgraph_entry:        0.061 us   |            make_vfsgid();
+      httpclient-135904 [012] 65324.172375: funcgraph_entry:                   |            vfsgid_in_group_p() {
+      httpclient-135904 [012] 65324.172375: funcgraph_entry:        0.090 us   |              in_group_p();
+      httpclient-135904 [012] 65324.172375: funcgraph_exit:         0.220 us   |            }
+      httpclient-135904 [012] 65324.172375: funcgraph_entry:                   |            capable_wrt_inode_uidgid() {
+      httpclient-135904 [012] 65324.172375: funcgraph_entry:                   |              security_capable() {
+      httpclient-135904 [012] 65324.172375: funcgraph_entry:        0.081 us   |                cap_capable();
+      httpclient-135904 [012] 65324.172375: funcgraph_entry:        0.070 us   |                apparmor_capable();
+      httpclient-135904 [012] 65324.172375: funcgraph_exit:         0.361 us   |              }
+      httpclient-135904 [012] 65324.172375: funcgraph_entry:                   |              privileged_wrt_inode_uidgid() {
+      httpclient-135904 [012] 65324.172375: funcgraph_entry:        0.080 us   |                make_vfsuid();
+      httpclient-135904 [012] 65324.172376: funcgraph_entry:                   |                from_kuid() {
+      httpclient-135904 [012] 65324.172376: funcgraph_entry:        0.060 us   |                  map_id_range_up();
+      httpclient-135904 [012] 65324.172376: funcgraph_exit:         0.190 us   |                }
+      httpclient-135904 [012] 65324.172376: funcgraph_entry:        0.050 us   |                make_vfsgid();
+      httpclient-135904 [012] 65324.172376: funcgraph_entry:                   |                from_kgid() {
+      httpclient-135904 [012] 65324.172376: funcgraph_entry:        0.061 us   |                  map_id_range_up();
+      httpclient-135904 [012] 65324.172376: funcgraph_exit:         0.191 us   |                }
+      httpclient-135904 [012] 65324.172376: funcgraph_exit:         0.862 us   |              }
+      httpclient-135904 [012] 65324.172376: funcgraph_exit:         1.413 us   |            }
+      httpclient-135904 [012] 65324.172376: funcgraph_exit:         2.815 us   |          }
+      httpclient-135904 [012] 65324.172376: funcgraph_exit:         3.186 us   |        }
+      httpclient-135904 [012] 65324.172376: funcgraph_entry:        0.050 us   |        security_inode_permission();
+      httpclient-135904 [012] 65324.172377: funcgraph_exit:         3.788 us   |      }
+      httpclient-135904 [012] 65324.172377: funcgraph_entry:        0.060 us   |      _raw_spin_lock();
+      httpclient-135904 [012] 65324.172377: funcgraph_entry:        0.060 us   |      _raw_spin_unlock();
+      httpclient-135904 [012] 65324.172377: funcgraph_entry:                   |      touch_atime() {
+      httpclient-135904 [012] 65324.172377: funcgraph_entry:                   |        atime_needs_update() {
+      httpclient-135904 [012] 65324.172377: funcgraph_entry:        0.060 us   |          make_vfsuid();
+      httpclient-135904 [012] 65324.172377: funcgraph_entry:        0.050 us   |          make_vfsgid();
+      httpclient-135904 [012] 65324.172377: funcgraph_exit:         0.290 us   |        }
+      httpclient-135904 [012] 65324.172378: funcgraph_exit:         0.410 us   |      }
+      httpclient-135904 [012] 65324.172378: funcgraph_entry:                   |      path_put() {
+      httpclient-135904 [012] 65324.172378: funcgraph_entry:                   |        dput() {
+      httpclient-135904 [012] 65324.172378: funcgraph_entry:                   |          dput.part.0() {
+      httpclient-135904 [012] 65324.172378: funcgraph_entry:        0.060 us   |            __cond_resched();
+      httpclient-135904 [012] 65324.172378: funcgraph_entry:        0.060 us   |            __rcu_read_lock();
+      httpclient-135904 [012] 65324.172378: funcgraph_entry:        0.060 us   |            __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172378: funcgraph_exit:         0.410 us   |          }
+      httpclient-135904 [012] 65324.172378: funcgraph_exit:         0.531 us   |        }
+      httpclient-135904 [012] 65324.172378: funcgraph_entry:                   |        mntput() {
+      httpclient-135904 [012] 65324.172378: funcgraph_entry:        0.070 us   |          __rcu_read_lock();
+      httpclient-135904 [012] 65324.172378: funcgraph_entry:        0.060 us   |          __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172379: funcgraph_exit:         0.330 us   |        }
+      httpclient-135904 [012] 65324.172379: funcgraph_exit:         1.031 us   |      }
+      httpclient-135904 [012] 65324.172379: funcgraph_exit:       + 10.260 us  |    }
+      httpclient-135904 [012] 65324.172379: funcgraph_entry:        0.050 us   |    _raw_spin_lock();
+      httpclient-135904 [012] 65324.172379: funcgraph_entry:        0.050 us   |    _raw_spin_lock();
+      httpclient-135904 [012] 65324.172379: funcgraph_entry:                   |    security_unix_stream_connect() {
+      httpclient-135904 [012] 65324.172379: funcgraph_entry:        0.070 us   |      hook_unix_stream_connect();
+      httpclient-135904 [012] 65324.172380: funcgraph_entry:                   |      apparmor_unix_stream_connect() {
+      httpclient-135904 [012] 65324.172380: funcgraph_entry:                   |        aa_unix_peer_perm() {
+      httpclient-135904 [012] 65324.172380: funcgraph_entry:                   |          unix_peer_perm() {
+      httpclient-135904 [012] 65324.172380: funcgraph_entry:        0.091 us   |            aa_label_next_confined();
+      httpclient-135904 [012] 65324.172380: funcgraph_exit:         0.341 us   |          }
+      httpclient-135904 [012] 65324.172380: funcgraph_exit:         0.571 us   |        }
+      httpclient-135904 [012] 65324.172380: funcgraph_entry:        0.060 us   |        unix_connect_peers();
+      httpclient-135904 [012] 65324.172381: funcgraph_exit:         0.922 us   |      }
+      httpclient-135904 [012] 65324.172381: funcgraph_exit:         1.372 us   |    }
+      httpclient-135904 [012] 65324.172381: funcgraph_entry:                   |    path_get() {
+      httpclient-135904 [012] 65324.172381: funcgraph_entry:        0.060 us   |      mntget();
+      httpclient-135904 [012] 65324.172381: funcgraph_exit:         0.171 us   |    }
+      httpclient-135904 [012] 65324.172381: funcgraph_entry:        0.050 us   |    _raw_spin_lock();
+      httpclient-135904 [012] 65324.172381: funcgraph_entry:        0.060 us   |    _raw_spin_unlock();
+      httpclient-135904 [012] 65324.172381: funcgraph_entry:        0.051 us   |    _raw_spin_unlock();
+      httpclient-135904 [012] 65324.172381: funcgraph_entry:        0.050 us   |    _raw_spin_lock();
+      httpclient-135904 [012] 65324.172382: funcgraph_entry:        0.050 us   |    _raw_spin_unlock();
+      httpclient-135904 [012] 65324.172382: funcgraph_entry:        0.050 us   |    _raw_spin_unlock();
+      httpclient-135904 [012] 65324.172382: funcgraph_entry:                   |    sock_def_readable() {
+      httpclient-135904 [012] 65324.172382: funcgraph_entry:        0.050 us   |      __rcu_read_lock();
+      httpclient-135904 [012] 65324.172382: funcgraph_entry:                   |      __wake_up_sync_key() {
+      httpclient-135904 [012] 65324.172382: funcgraph_entry:        0.070 us   |        _raw_spin_lock_irqsave();
+      httpclient-135904 [012] 65324.172382: funcgraph_entry:                   |        __wake_up_common() {
+      httpclient-135904 [012] 65324.172382: funcgraph_entry:                   |          ep_poll_callback() {
+      httpclient-135904 [012] 65324.172382: funcgraph_entry:        0.061 us   |            _raw_spin_lock_irqsave();
+      httpclient-135904 [012] 65324.172383: funcgraph_entry:        0.060 us   |            __rcu_read_lock();
+      httpclient-135904 [012] 65324.172383: funcgraph_entry:        0.070 us   |            __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172383: funcgraph_entry:                   |            __wake_up_sync() {
+      httpclient-135904 [012] 65324.172383: funcgraph_entry:        0.060 us   |              _raw_spin_lock_irqsave();
+      httpclient-135904 [012] 65324.172383: funcgraph_entry:                   |              __wake_up_common() {
+      httpclient-135904 [012] 65324.172383: funcgraph_entry:                   |                ep_autoremove_wake_function() {
+      httpclient-135904 [012] 65324.172383: funcgraph_entry:                   |                  default_wake_function() {
+      httpclient-135904 [012] 65324.172383: funcgraph_entry:                   |                    try_to_wake_up() {
+      httpclient-135904 [012] 65324.172383: funcgraph_entry:        0.050 us   |                      _raw_spin_lock_irqsave();
+      httpclient-135904 [012] 65324.172384: funcgraph_entry:        0.080 us   |                      __traceiter_sched_waking();
+      httpclient-135904 [012] 65324.172384: funcgraph_entry:                   |                      select_task_rq_fair() {
+      httpclient-135904 [012] 65324.172384: funcgraph_entry:        0.060 us   |                        __rcu_read_lock();
+      httpclient-135904 [012] 65324.172384: funcgraph_entry:        0.050 us   |                        cpus_share_cache();
+      httpclient-135904 [012] 65324.172384: funcgraph_entry:        0.070 us   |                        __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172385: funcgraph_exit:         0.582 us   |                      }
+      httpclient-135904 [012] 65324.172385: funcgraph_entry:                   |                      set_task_cpu() {
+      httpclient-135904 [012] 65324.172385: funcgraph_entry:                   |                        migrate_task_rq_fair() {
+      httpclient-135904 [012] 65324.172385: funcgraph_entry:                   |                          remove_entity_load_avg() {
+      httpclient-135904 [012] 65324.172385: funcgraph_entry:        0.221 us   |                            __update_load_avg_blocked_se();
+      httpclient-135904 [012] 65324.172385: funcgraph_entry:        0.060 us   |                            _raw_spin_lock_irqsave();
+      httpclient-135904 [012] 65324.172385: funcgraph_entry:        0.060 us   |                            _raw_spin_unlock_irqrestore();
+      httpclient-135904 [012] 65324.172385: funcgraph_exit:         0.591 us   |                          }
+      httpclient-135904 [012] 65324.172386: funcgraph_exit:         0.751 us   |                        }
+      httpclient-135904 [012] 65324.172386: funcgraph_entry:        0.060 us   |                        set_task_rq_fair();
+      httpclient-135904 [012] 65324.172386: funcgraph_exit:         1.032 us   |                      }
+      httpclient-135904 [012] 65324.172386: funcgraph_entry:                   |                      ttwu_queue_wakelist() {
+      httpclient-135904 [012] 65324.172386: funcgraph_entry:                   |                        __smp_call_single_queue() {
+      httpclient-135904 [012] 65324.172386: funcgraph_entry:        0.090 us   |                          call_function_single_prep_ipi();
+      httpclient-135904 [012] 65324.172386: funcgraph_entry:                   |                          native_send_call_func_single_ipi() {
+      httpclient-135904 [012] 65324.172386: funcgraph_entry:        0.210 us   |                            default_send_IPI_single_phys();
+      httpclient-135904 [012] 65324.172387: funcgraph_exit:         0.391 us   |                          }
+      httpclient-135904 [012] 65324.172387: funcgraph_exit:         0.792 us   |                        }
+      httpclient-135904 [012] 65324.172387: funcgraph_exit:         0.932 us   |                      }
+      httpclient-135904 [012] 65324.172387: funcgraph_entry:        0.050 us   |                      _raw_spin_unlock_irqrestore();
+      httpclient-135904 [012] 65324.172387: funcgraph_exit:         3.546 us   |                    }
+      httpclient-135904 [012] 65324.172387: funcgraph_exit:         3.677 us   |                  }
+      httpclient-135904 [012] 65324.172387: funcgraph_exit:         3.817 us   |                }
+      httpclient-135904 [012] 65324.172387: funcgraph_exit:         4.158 us   |              }
+      httpclient-135904 [012] 65324.172387: funcgraph_entry:        0.050 us   |              _raw_spin_unlock_irqrestore();
+      httpclient-135904 [012] 65324.172387: funcgraph_exit:         4.529 us   |            }
+      httpclient-135904 [012] 65324.172387: funcgraph_entry:        0.050 us   |            _raw_spin_unlock_irqrestore();
+      httpclient-135904 [012] 65324.172388: funcgraph_exit:         5.280 us   |          }
+      httpclient-135904 [012] 65324.172388: funcgraph_exit:         5.420 us   |        }
+      httpclient-135904 [012] 65324.172388: funcgraph_entry:        0.060 us   |        _raw_spin_unlock_irqrestore();
+      httpclient-135904 [012] 65324.172388: funcgraph_exit:         5.841 us   |      }
+      httpclient-135904 [012] 65324.172388: funcgraph_entry:        0.060 us   |      __rcu_read_unlock();
+      httpclient-135904 [012] 65324.172388: funcgraph_exit:         6.191 us   |    }
+      httpclient-135904 [012] 65324.172388: funcgraph_exit:       + 35.206 us  |  }
