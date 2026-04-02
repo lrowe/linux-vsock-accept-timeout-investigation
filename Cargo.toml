@@ -1,0 +1,12 @@
+[package]
+name = "httpserver_examples"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+httparse = "1.10.1"
+libc = "0.2.183"
+tokio = { version = "1.50.0", features = ["full"] }
+tokio-macros = "2.6.1"
+tokio-vsock = "0.7.2"
+vsock = "0.5.2"

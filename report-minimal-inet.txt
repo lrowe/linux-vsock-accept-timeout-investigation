@@ -1,0 +1,19 @@
+cpus=16
+         minimal-70786 [008] 75796.546840: funcgraph_entry:                   |  inet_accept() {
+         minimal-70786 [008] 75796.546840: funcgraph_entry:                   |    inet_csk_accept() {
+         minimal-70786 [008] 75796.546841: funcgraph_entry:                   |      lock_sock_nested() {
+         minimal-70786 [008] 75796.546841: funcgraph_entry:        0.181 us   |        __cond_resched();
+         minimal-70786 [008] 75796.546841: funcgraph_entry:        0.090 us   |        _raw_spin_lock_bh();
+         minimal-70786 [008] 75796.546841: funcgraph_entry:                   |        _raw_spin_unlock_bh() {
+         minimal-70786 [008] 75796.546841: funcgraph_entry:        0.091 us   |          __local_bh_enable_ip();
+         minimal-70786 [008] 75796.546841: funcgraph_exit:         0.281 us   |        }
+         minimal-70786 [008] 75796.546842: funcgraph_exit:         1.012 us   |      }
+         minimal-70786 [008] 75796.546842: funcgraph_entry:                   |      release_sock() {
+         minimal-70786 [008] 75796.546842: funcgraph_entry:        0.080 us   |        _raw_spin_lock_bh();
+         minimal-70786 [008] 75796.546842: funcgraph_entry:        0.080 us   |        tcp_release_cb();
+         minimal-70786 [008] 75796.546842: funcgraph_entry:                   |        _raw_spin_unlock_bh() {
+         minimal-70786 [008] 75796.546842: funcgraph_entry:        0.090 us   |          __local_bh_enable_ip();
+         minimal-70786 [008] 75796.546842: funcgraph_exit:         0.281 us   |        }
+         minimal-70786 [008] 75796.546842: funcgraph_exit:         0.822 us   |      }
+         minimal-70786 [008] 75796.546843: funcgraph_exit:         2.234 us   |    }
+         minimal-70786 [008] 75796.546843: funcgraph_exit:         3.547 us   |  }

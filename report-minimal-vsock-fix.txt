@@ -1,0 +1,16 @@
+cpus=16
+         minimal-5967  [005]   412.484124: funcgraph_entry:                   |  vsock_accept() {
+         minimal-5967  [005]   412.484125: funcgraph_entry:                   |    lock_sock_nested() {
+         minimal-5967  [005]   412.484125: funcgraph_entry:        0.170 us   |      __cond_resched();
+         minimal-5967  [005]   412.484126: funcgraph_entry:        0.120 us   |      _raw_spin_lock_bh();
+         minimal-5967  [005]   412.484126: funcgraph_entry:                   |      _raw_spin_unlock_bh() {
+         minimal-5967  [005]   412.484126: funcgraph_entry:        0.091 us   |        __local_bh_enable_ip();
+         minimal-5967  [005]   412.484126: funcgraph_exit:         0.271 us   |      }
+         minimal-5967  [005]   412.484126: funcgraph_exit:         1.212 us   |    }
+         minimal-5967  [005]   412.484126: funcgraph_entry:                   |    release_sock() {
+         minimal-5967  [005]   412.484126: funcgraph_entry:        0.100 us   |      _raw_spin_lock_bh();
+         minimal-5967  [005]   412.484127: funcgraph_entry:                   |      _raw_spin_unlock_bh() {
+         minimal-5967  [005]   412.484127: funcgraph_entry:        0.080 us   |        __local_bh_enable_ip();
+         minimal-5967  [005]   412.484127: funcgraph_exit:         0.260 us   |      }
+         minimal-5967  [005]   412.484127: funcgraph_exit:         0.691 us   |    }
+         minimal-5967  [005]   412.484127: funcgraph_exit:         3.166 us   |  }
